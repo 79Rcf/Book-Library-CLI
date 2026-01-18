@@ -1,0 +1,28 @@
+{
+  "name": "book-library-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "library": "./src/library.js"
+  },
+  "scripts": {
+    "start": "node src/library.js",
+    "test": "jest",
+    "add": "node src/library.js add",
+    "list": "node src/library.js list",
+    "export": "node src/library.js export",
+    "init-db": "psql -d postgres -c \"DROP TABLE IF EXISTS books;\" && node src/library.js init"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "fast-csv": "^5.0.5",
+    "pg": "^8.17.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

@@ -105,10 +105,10 @@ async function main() {
         const id = args[0];
         if (!id) { console.error('Error: ID required'); break; }
 
-        const answer = await rl.question(`⚠️ Delete book ID ${id}? (y/n): `);
+        const answer = await rl.question(`Delete book ID ${id}? (y/n): `);
         if (['y','yes'].includes(answer.toLowerCase())) {
           const success = await LibraryService.deleteBook(id);
-          success ? logger.emit('action', `DELETE: Removed Book ID ${id}`) : console.log('⚠️ Book not found.');
+          success ? logger.emit('action', `DELETE: Removed Book ID ${id}`) : console.log('Book not found.');
         } else {
           console.log(' Deletion cancelled.');
         }
